@@ -2,7 +2,7 @@ import math
 
 """
 Author: Asmita
-An implementation of heap data structure
+An implementation of heap data structure.
 """
 
 class Heap:
@@ -33,10 +33,11 @@ class Heap:
 			self.max_heapify(largest)
 
 	def build_max_heap(self):
-		i = (self.size-1) / 2
-		while i >= 0:
-			self.max_heapify(i)
-			i -= 1
+		if self.size > 1:
+			i = (self.size-1) / 2
+			while i >= 0:
+				self.max_heapify(i)
+				i -= 1
 
 	def print_heap(self):
 		print self.array
