@@ -2,7 +2,7 @@ from heap import Heap
 
 """
 Author: Asmita
-An implementatio of priority queue data structure
+An implementation of priority queue data structure.
 """
 
 class PriorityQueue:
