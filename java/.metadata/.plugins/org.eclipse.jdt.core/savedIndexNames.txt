@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+/home/asmita/codes/java/.metadata/.plugins/org.eclipse.jdt.core
+2827950075.index
