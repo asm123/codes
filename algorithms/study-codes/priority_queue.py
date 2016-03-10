@@ -54,11 +54,5 @@ if __name__ == '__main__':
 	print pq.extract_max()
 	pq.print_priority_queue()
 	pq.insert(0)
-	pq.increase_key(3, 1000)
+	pq.increase_key(3, -1)
 	pq.print_priority_queue()
-
-
-
-
-
-
