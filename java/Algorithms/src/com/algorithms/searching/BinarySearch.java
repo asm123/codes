@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.algorithms.search;
+package com.algorithms.searching;
 
 /**
  * Binary search for integer array
