@@ -38,6 +38,21 @@ public class BinarySearch {
         return -1;
     }
     
+    private static int findInsertionLocation(int[] array, int key, int low, int high) {
+        if (high <= low)
+            return (array[low] < key ? (low+1) : low);
+        int mid = low + (high-low)/2;
+        if (key == array[mid])
+            return mid+1;
+        if (key < array[mid])
+            return findInsertionLocation(array, key, low, mid-1);
+        return findInsertionLocation(array, key, mid+1, high);
+    }
+    
+    public static int findInsertionLocation(int[] array, int key) {
+        return findInsertionLocation(array, key, 0, array.length-1);
+    }
+    
     public static int search (int[] array, int x) {
         return searchRecursive(array, 0, array.length-1, x);
 //        return searchIterative(array, x);
