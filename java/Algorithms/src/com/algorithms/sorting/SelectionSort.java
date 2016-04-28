@@ -5,8 +5,6 @@
  */
 package com.algorithms.sorting;
 
-import java.util.Arrays;
-
 /**
  *
  * @author asmita

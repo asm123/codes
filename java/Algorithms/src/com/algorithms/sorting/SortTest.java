@@ -14,9 +14,9 @@ import java.util.Arrays;
 public class SortTest {
     
     public static void main (String[] args) {
-        int[] array = {12, 20, 13, 5, 6};
+        int[] array = {16, 14, 10, 8, 7, 9, 3, 2, 4, 1};
         System.out.println("Unsorted: " + Arrays.toString(array));
-        Sort sorter = new MergeSort();
+        Sort sorter = new HeapSort();
         sorter.sort(array);
         System.out.println("Sorted: " + Arrays.toString(array));
     }
