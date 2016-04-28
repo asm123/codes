@@ -15,8 +15,8 @@ public class QuickSort extends Sort {
 
     private int partition (int array[], int low, int high) {
         int pivotPosition = low + (high-low)/2;
+        int pivot = array[pivotPosition];
         swap(array, pivotPosition, high);
-        int pivot = array[high];
         int i = low-1;
         for (int j = low; j < high; j++) {
             if (array[j] <= pivot) {
