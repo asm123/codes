@@ -6,6 +6,7 @@
 package com.algorithms.sorting;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.Arrays;
  */
 public class QuickSort extends Sort {
 
-    private int partition (int array[], int low, int high) {
+    private int partitionMedian (int array[], int low, int high) {
         int pivotPosition = low + (high-low)/2;
         int pivot = array[pivotPosition];
         
@@ -32,12 +33,33 @@ public class QuickSort extends Sort {
         return i;
     }
     
+    private int partitionClassic(int array[], int low, int high) {
+        int pivot = array[high];
+        int i = low-1;
+        for (int j = low; j < high; j++) {
+            if (array[j] <= pivot) {
+                i++;
+                swap(array, i, j);
+            }
+        }
+        swap(array, i+1, high);
+        return i+1;
+    }
+    
+    private int partitionRandomized(int array[], int low, int high) {
+        int pivotPosition = low + new Random().nextInt(high - low);
+        swap(array, pivotPosition, high);
+        return partitionClassic(array, low, high);
+    }
+    
     private void quickSort(int array[], int low, int high) {
-        int partitionIndex = partition(array, low, high);
-        if (low < partitionIndex-1)
-            quickSort(array, low, partitionIndex-1);
-        if (partitionIndex < high)
-            quickSort(array, partitionIndex, high);
+        if (low < high) {
+            int partitionIndex = partitionRandomized(array, low, high);
+            if (low < partitionIndex-1)
+                quickSort(array, low, partitionIndex-1);
+            if (partitionIndex < high)
+                quickSort(array, partitionIndex+1, high);
+        }
     }
     
     @Override
