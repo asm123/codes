@@ -9,13 +9,7 @@ package com.algorithms.sorting;
  *
  * @author asmita
  */
-public class SelectionSort implements Sort {
-    
-    private void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+public class SelectionSort extends Sort {
     
     @Override
     public void sort(int[] array) {

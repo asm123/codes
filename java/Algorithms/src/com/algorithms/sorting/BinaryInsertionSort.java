@@ -11,7 +11,7 @@ import com.algorithms.searching.BinarySearch;
  *
  * @author asmita
  */
-public class BinaryInsertionSort implements Sort {
+public class BinaryInsertionSort extends Sort {
     
     
     @Override

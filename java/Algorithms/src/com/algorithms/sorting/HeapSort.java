@@ -5,20 +5,12 @@
  */
 package com.algorithms.sorting;
 
-import java.util.Arrays;
-
 /**
  *
  * @author asmita
  */
-public class HeapSort implements Sort {
+public class HeapSort extends Sort {
 
-    private void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    
     private void buildMaxHeap(int[] array) {
         int n = array.length;
         for (int i = n/2-1; i >= 0; i--)

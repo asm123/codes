@@ -9,6 +9,12 @@ package com.algorithms.sorting;
  *
  * @author asmita
  */
-public interface Sort {
-    void sort(int[] array);
+public abstract class Sort {
+    protected void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    
+    public abstract void sort(int[] array);
 }

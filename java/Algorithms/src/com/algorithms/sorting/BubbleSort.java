@@ -11,13 +11,8 @@ import java.util.Arrays;
  *
  * @author asmita
  */
-public class BubbleSort implements Sort {
+public class BubbleSort extends Sort {
 
-    private void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
     
     @Override
     public void sort(int[] array) {

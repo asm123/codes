@@ -9,7 +9,7 @@ package com.algorithms.sorting;
  *
  * @author asmita
  */
-public class MergeSort implements Sort {
+public class MergeSort extends Sort {
 
     private void mergeSort(int[] array, int left, int right) {
         if (left < right) {

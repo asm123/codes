@@ -9,7 +9,7 @@ package com.algorithms.sorting;
  *
  * @author asmita
  */
-public class InsertionSort implements Sort {
+public class InsertionSort extends Sort {
 
     @Override
     public void sort(int[] array) {
