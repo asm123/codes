@@ -52,19 +52,44 @@ public class QuickSort extends Sort {
         return partitionClassic(array, low, high);
     }
     
-    private void quickSort(int array[], int low, int high) {
+    private void quickSortRecursive(int[] array, int low, int high) {
         if (low < high) {
             int partitionIndex = partitionRandomized(array, low, high);
             if (low < partitionIndex-1)
-                quickSort(array, low, partitionIndex-1);
+                quickSortRecursive(array, low, partitionIndex-1);
             if (partitionIndex < high)
-                quickSort(array, partitionIndex+1, high);
+                quickSortRecursive(array, partitionIndex+1, high);
+        }
+    }
+    
+    private void quickSortIterative(int[] array, int low, int high) {
+        int[] stack = new int[high-low+1];
+        int top = -1;
+        stack[++top] = low;
+        stack[++top] = high;
+        
+        while (top >= 0) {
+            high = stack[top--];
+            low = stack[top--];
+            
+            int pivotPosition = partitionClassic(array, low, high);
+            
+            if (pivotPosition-1 > low) {
+                stack[++top] = low;
+                stack[++top] = pivotPosition;
+            }
+            
+            if (pivotPosition+1 < high) {
+                stack[++top] = pivotPosition+1;
+                stack[++top] = high;
+            }
         }
     }
     
     @Override
     public void sort(int[] array) {
-        quickSort(array, 0, array.length-1);
+//        quickSortRecursive(array, 0, array.length-1);
+        quickSortRecursive(array, 0, array.length-1);
     }
     
 }
