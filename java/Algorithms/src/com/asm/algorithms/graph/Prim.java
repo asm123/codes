@@ -5,7 +5,8 @@
  */
 package com.asm.algorithms.graph;
 
-import com.asm.data_structures.graph.Graph;
+
+import com.asm.algorithms.data_structures.graph.Graph;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Queue;
