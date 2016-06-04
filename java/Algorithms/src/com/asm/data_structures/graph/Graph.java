@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.algorithms.data_structures.graph;
+package com.asm.data_structures.graph;
 
 import java.util.ArrayList;
 import java.util.Iterator;

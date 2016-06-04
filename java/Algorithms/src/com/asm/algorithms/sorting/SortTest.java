@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.algorithms.sorting;
+package com.asm.algorithms.sorting;
 
 import java.util.Arrays;
 

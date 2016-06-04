@@ -3,23 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.algorithms.sorting;
+package com.asm.algorithms.sorting;
+
+import com.asm.algorithms.searching.BinarySearch;
 
 /**
  *
  * @author asmita
  */
-public class InsertionSort extends Sort {
-
+public class BinaryInsertionSort extends Sort {
+    
+    
     @Override
     public void sort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             int key = array[i];
-            int j = i-1;
-            for (j = i-1; j >= 0 && array[j] > key; j--) {
+            int insertionLocation = BinarySearch.findInsertionLocation(array, key);
+            int j;
+            for (j = i-1; j >= insertionLocation; j--) {
                 array[j+1] = array[j];
             }
             array[j+1] = key;
         }
     }
+    
 }

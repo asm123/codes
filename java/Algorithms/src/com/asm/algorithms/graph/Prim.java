@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.algorithms.graph;
+package com.asm.algorithms.graph;
 
-import com.algorithms.data_structures.graph.Graph;
+import com.asm.data_structures.graph.Graph;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Queue;
