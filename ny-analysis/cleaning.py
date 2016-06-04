@@ -49,6 +49,8 @@ def clean_data(input_file_path, output_file_path):
 		for line in f:
 			count += 1
 			if count == 0:
+				# adding header
+				clean_requests.append("trip_id," + line)
 				continue
 			line = line.strip()
 			if not line:
@@ -63,7 +65,7 @@ def clean_data(input_file_path, output_file_path):
 				dropoff_time = fields[2]
 				if not (is_valid_datetime(pickup_time) and is_valid_datetime(dropoff_time)):
 					continue
-				clean_requests.append(line)
+				clean_requests.append(str(count) + "," + line)
 			except:
 				continue
 				# break
