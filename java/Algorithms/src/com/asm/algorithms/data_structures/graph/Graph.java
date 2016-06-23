@@ -44,11 +44,20 @@ public class Graph <T extends Comparable<T>> {
     public void setVertices (List <Vertex <T>> vertices) {
         this.vertices = vertices;
     }
+    
+    
+    public Vertex<T> getVertex(T value) {
+        for (Vertex<T> v: this.getVertices()) {
+            if (v.getValue().equals(value))
+                return v;
+        }
+        return null;
+    }
 
     public List <Edge <T>> getEdges() {
         return edges;
     }
-
+    
     public void setEdges (List <Edge <T>> edges) {
         this.edges = edges;
     }
@@ -71,7 +80,7 @@ public class Graph <T extends Comparable<T>> {
         public T getValue() {
             return this.value;
         }
-
+        
         public void addEdge(Edge<T> e) {
             edges.add(e);
         }
@@ -192,11 +201,15 @@ public class Graph <T extends Comparable<T>> {
         }
     }
     
-    public static class Path <T extends Comparable<T>> {
+    public static class Path <T extends Comparable<T>> implements Comparable<Path<T>> {
     
         private List <Graph.Edge<T>> edges = new ArrayList<>();
         private int cost = 0;
 
+        public Path() {
+            
+        }
+        
         public List<Graph.Edge<T>> getEdges() {
             return edges;
         }
@@ -217,7 +230,18 @@ public class Graph <T extends Comparable<T>> {
             this.getEdges().add(e);
             this.cost += e.getCost();
         }
-    }
+        
+        public Vertex<T> getSource() {
+            return getEdges().get(0).getFromVertex();
+        }
+        
+        public Vertex<T> getTarget() {
+            return getEdges().get(getEdges().size()-1).getToVertex();
+        }
 
-    
+        @Override
+        public int compareTo(Path<T> p) {
+            return Integer.compare(this.getCost(), p.getCost());
+        }
+    }
 }
