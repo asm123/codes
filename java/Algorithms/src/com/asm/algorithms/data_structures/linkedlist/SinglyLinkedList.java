@@ -10,19 +10,46 @@ package com.asm.algorithms.data_structures.linkedlist;
  * @author asmita
  */
 public class SinglyLinkedList extends LinkedList {
-
+    private Node tail;
+    
+    
     @Override
     public void insertAtEnd(int data) {
         if (this.head == null) {
             this.head = new Node(data);
+            this.tail = head;
         }
         else {
             Node newNode = new Node(data);
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+            /*
             Node current = head;
             while (current.getNext() != null) {
                 current = current.getNext();
             }
             current.setNext(newNode);
+            */
+        }
+        length++;
+    }
+    
+    @Override
+    public void insertAtEnd(Node node) {
+        if (this.head == null) {
+            this.head = node;
+            this.tail = head;
+        }
+        else {
+            this.tail.setNext(node);
+            this.tail = node;
+            /*
+            Node current = head;
+            while (current.getNext() != null) {
+                current = current.getNext();
+            }
+            current.setNext(newNode);
+            */
         }
         length++;
     }
@@ -58,5 +85,13 @@ public class SinglyLinkedList extends LinkedList {
     @Override
     public void mergeSort() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void shiftHead() {
+        if (this.head == null) {
+            return;
+        }
+        this.head = this.head.getNext();
     }
 }

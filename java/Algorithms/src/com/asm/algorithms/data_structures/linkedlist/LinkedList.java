@@ -22,6 +22,7 @@ public abstract class LinkedList {
     }
     
     public abstract void insertAtEnd(int data);
+    public abstract void insertAtEnd(Node node);
     public abstract void insertAtBeginning(int data);
     
     /**
@@ -30,6 +31,13 @@ public abstract class LinkedList {
      * @param position 0-based position
      */
     public abstract void insertAtPosition(int data, int position);
+    
+    public boolean isEmpty() {
+        return this.head == null;
+    }
+    
+    public abstract void shiftHead();
+    
     
     public void print() {
         Node currentNode = head;

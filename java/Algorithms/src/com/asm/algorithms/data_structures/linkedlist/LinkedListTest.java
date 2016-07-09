@@ -15,11 +15,13 @@ public class LinkedListTest {
         int numberOfNodes = 10;
         LinkedList list = new SinglyLinkedList();
         for (int i = 0; i < numberOfNodes/2; i++) {
-            list.insertAtEnd(i);
+            list.insertAtEnd(new Node(i));
         }
+        /*
         for (int i = numberOfNodes/2; i < numberOfNodes; i++) {
             list.insertAtBeginning(i);
         }
+        */
         list.print();
     }
     
